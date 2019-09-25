@@ -1,0 +1,63 @@
+# Boilerplate
+snippet main
+	${1:#include <iostream>}
+
+	${2:using namespace std;}
+
+	int main() {
+		${3:// code}
+
+		return 0;
+	}
+# Output
+snippet o
+	cout << ${1:primitive};
+# Output + newline
+snippet ol
+	cout << ${1:primitive} << '\n';
+# Input
+snippet i
+	cin >> ${1:char};
+# Input + getline
+snippet il
+	getline(cin, ${1:string});
+# Error 
+snippet e
+	cerr << ${1:primitive};
+# Error + newline
+snippet el
+	cerr << ${1:primitive} << '\n';
+# Include header
+snippet in
+	#include "${1:header}.h"
+# Include standard library
+snippet stl
+	#include <${1:header}>
+# For
+snippet for
+	for (int ${1:i} = 0; $1 < ${2:count}; ++$1) {
+		${3:// code}
+	}
+# For iterator
+snippet fori
+	for (auto ${1:it} = ${2:co}.begin(); $1 != $2.end(); ++$1) {
+		${3:// code}
+	}
+# Namespace
+snippet ns
+	namespace ${1:`Filename('', 'my')`} {
+		${2:// code}
+	}
+# Class
+snippet cd
+	class ${1:`Filename('$1', 'name')`} {
+		public:
+			$1(2:arguments});
+	};
+# Class header
+snippet ch
+	#include ${1:`Filename('$1', 'name')`}
+
+	$1::$1(${2:arguments}) {
+		${3:// code }
+	}

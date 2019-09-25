@@ -1,0 +1,158 @@
+[color]
+fg = #F1F1F1
+bg = #333333
+cursor = #4C5360
+primary = #81CFFF
+secondary = #C678DD
+yellow = #E5C07B
+green = #98C379
+danger = #E06C75
+
+[bar/main]
+width = 100%
+height = 28
+
+background = ${color.bg}
+foreground = ${color.fg}
+
+border-bottom-size = 1
+border-color = #000
+
+module-margin-left = 1 
+padding = 1
+
+font-0 = Source Code Pro Medium:pixelsize=10;antialias=true;3
+
+fixed-center = true
+
+modules-left = workspaces
+modules-center = datetime
+modules-right = keyboard brightness audio wlan eth battery
+
+tray-detached = false
+tray-scale = 1.0
+tray-position = right
+tray-padding = 3
+tray-background = ${color.cursor}
+
+[module/workspaces]
+type = internal/xworkspaces
+format = <label-state>
+
+label-active = %name%~
+label-active-foreground = ${color.primary}
+label-active-margin-right = 1
+label-active-underscore = #ff0000
+
+label-urgent = %name%
+label-urgent-foreground = ${color.bg}
+label-urgent-background = ${color.danger}
+label-urgent-margin-right = 1
+
+label-empty = %name%
+label-empty-margin-right = 1
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = ${color.bg}
+format-foreground = ${color.fg}
+format-padding = 1
+
+label = %title%
+label-maxlen = 50
+
+[module/datetime]
+type = internal/date
+date = "%A, %B %d"
+time = "%l:%M %p"
+label = "%date% %time%"
+
+[module/keyboard]
+type = internal/xkeyboard
+label-layout = %layout% %name%
+
+[module/audio]
+type = internal/pulseaudio
+
+enable-scroll = false
+  
+format-volume = <ramp-volume> <label-volume> 
+label-muted = "@X"
+label-muted-foreground = ${color.secondary}
+ramp-volume-0 = "@"
+ramp-volume-foreground = ${color.secondary} 
+
+[module/brightness]
+type = internal/xbacklight
+
+enable-scroll = false
+
+format = <ramp> <label>
+ramp-0 = "*"
+ramp-foreground = ${color.yellow}
+
+[module/battery]
+type = internal/battery
+full-at = 99
+time-format = %H:%M
+battery = BAT1
+adapter = AC
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+format-full = <label-full>
+format-full-prefix = "[F] "
+
+ramp-capacity-0 = "[L]"
+ramp-capacity-1 = "[M]"
+ramp-capacity-2 = "[M]"
+ramp-capacity-3 = "[M]"
+ramp-capacity-4 = "[H]"
+ramp-capacity-5 = "[H]"
+
+ramp-capacity-0-foreground = ${color.danger}
+ramp-capacity-foreground = ${color.green}
+
+animation-charging-0 = "[C]"
+animation-charging-1 = "[c]"
+animation-charging-foreground = ${color.green}
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0 
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${color.fg}
+
+ramp-signal-0 = "!" 
+ramp-signal-1 = "!!" 
+ramp-signal-2 = "!!!"
+ramp-signal-foreground = ${color.fg}
+
+[module/eth]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+
+;format-connected-underline = #55aa55
+format-connected-prefix = "ETH"
+format-connected-prefix-foreground = ${color.fg}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${color.fg}
+

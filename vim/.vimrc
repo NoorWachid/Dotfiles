@@ -1,5 +1,5 @@
 syntax on
-filetype plugin on
+filetype plugin indent on
 
 " Display
 set background=dark
@@ -15,10 +15,9 @@ set wildignore+=**/node_modules/**
 
 " Indent
 set expandtab
-set autoindent
 set smartindent
 set shiftwidth=2
-set tabstop=2 
+set softtabstop=2 
 set smarttab
 set breakindent
 

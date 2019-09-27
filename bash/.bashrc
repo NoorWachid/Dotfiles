@@ -21,7 +21,8 @@ PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:$(pwd_abbr)\007"'
 # aliases
 ## prevent vim autism go crazy
 alias :q='exit'
-## default options
+## default flags
 alias ls='ls --color=auto'
 alias grep='grep --color=auto --exclude-dir=".git"'
 alias nnn='nnn -d && . ~/.config/nnn/.lastd'
+

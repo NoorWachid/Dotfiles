@@ -19,7 +19,7 @@ PS1="\e[1;32m\u@\h\e[m \e[1;34m\w\e[m \e[1;31m\$(git_branch)\e[m\n\$ "
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:$(pwd_abbr)\007"'
 
 # aliases
-## prevent vim autism go crazy
+## prevent vim autism goes crazy
 alias :q='exit'
 ## default flags
 alias ls='ls --color=auto'

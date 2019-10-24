@@ -9,7 +9,7 @@ I'm **not** using arch BTW! Rolling releases **break** my laptop!
 - `dwm`, window manager.
 - `dmenu`, program runner and more.
 - `dunst`, notifier.
-- `nnn`, file manager.
+- `lf`, file manager.
 - `st`, terminal emulator.
 - `tmux`, terminal multiplexer.
 - `vim`, text editor.
@@ -23,8 +23,8 @@ I'm **not** using arch BTW! Rolling releases **break** my laptop!
 - `mpv`, video player.
 - `firefox`, web browser.
 ### Utilities that make my life easier 
+- `stow`, dotfiles manager.
 - `git`, version control system.
-- `clang`, c/c++ compiler.
 - `cmake`, Makefile generator.
 - `network-manager`, network manager.
 - `trash-cli`, trash helper.

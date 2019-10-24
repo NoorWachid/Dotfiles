@@ -11,8 +11,6 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 # default program | path
-export CXX=clang++
 export EDITOR=vim
 export PAGER=less
 export BROWSER=firefox
-export PG_OF_PATH=/home/noor/sources/openframeworks

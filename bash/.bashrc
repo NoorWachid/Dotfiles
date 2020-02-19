@@ -24,3 +24,5 @@ alias :q='exit'
 ## default flags
 alias ls='ls --color=auto'
 alias grep='grep --color=auto --exclude-dir=".git"'
+alias ar='aria2c'
+alias nn='nnn -d'

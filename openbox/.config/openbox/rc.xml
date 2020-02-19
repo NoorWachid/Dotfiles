@@ -42,8 +42,8 @@ Copy the file to $HOME/.config/openbox/ instead. -->
       'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare-02</name>
-    <titleLayout>NLIMC</titleLayout>
+    <name>XDark</name>
+    <titleLayout>LIMC</titleLayout>
     <!--
         available characters are NDSLIMC, each can occur at most once.
         N: window icon
@@ -54,10 +54,10 @@ Copy the file to $HOME/.config/openbox/ instead. -->
         S: shade (roll up/down)
         D: omnipresent (on all desktops).
       -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Source Code Pro Heavy</name>
+      <name>Sans</name>
       <size>8</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -66,7 +66,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Source Code Pro Heavy</name>
+      <name>Sans</name>
       <size>8</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -75,7 +75,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Source Code Pro Medium</name>
+      <name>Sans</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -84,7 +84,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Source Code Pro Heavy</name>
+      <name>Sans</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -93,7 +93,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Source Code Pro Heavy</name>
+      <name>Sans</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -102,7 +102,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Source Code Pro Medium</name>
+      <name>Sans</name>
       <size>9</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
@@ -125,7 +125,7 @@ Copy the file to $HOME/.config/openbox/ instead. -->
       <name>Three</name>
       <name>Four</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
     desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -246,6 +246,7 @@ cases. -->
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
+        <bar>no</bar>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -255,6 +256,7 @@ cases. -->
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow">
+        <bar>no</bar>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -263,22 +265,22 @@ cases. -->
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
+    <keybind key="A-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Left">
+    <keybind key="A-Left">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Up">
+    <keybind key="A-Up">
       <action name="DirectionalCycleWindows">
         <direction>up</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Down">
+    <keybind key="A-Down">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
@@ -286,20 +288,20 @@ cases. -->
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>ss.sh</command>
+        <command>screenshot.sh</command>
       </action>
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>ss.sh w</command>
+        <command>screenshot.sh w</command>
       </action>
     </keybind>
-    <keybind key="A-S-Print">
+    <keybind key="S-Print">
       <action name="Execute">
-        <command>ss.sh s</command>
+        <command>screenshot.sh s</command>
       </action>
     </keybind>
-    <keybind key="A-Left">
+    <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -308,7 +310,7 @@ cases. -->
         <width>50%</width>
       </action>
     </keybind>
-    <keybind key="A-Right">
+    <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -317,7 +319,7 @@ cases. -->
         <width>50%</width>
       </action>
     </keybind>
-    <keybind key="A-Up">
+    <keybind key="W-Up">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -326,7 +328,7 @@ cases. -->
         <height>50%</height>
       </action>
     </keybind>
-    <keybind key="A-Down">
+    <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -335,34 +337,60 @@ cases. -->
         <height>50%</height>
       </action>
     </keybind>
+    <keybind key="W-S-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="A-S-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="A-S-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>-0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
     <keybind key="A-r">
       <action name="Execute">
-        <command>runner.sh</command>
+        <command>dmenu_run</command>
       </action>
     </keybind>
     <keybind key="A-Return">
       <action name="Execute">
-        <command>st</command>
+        <command>termite</command>
       </action>
     </keybind>
-    <keybind key="A-S-x">
+    <keybind key="A-S-r">
       <action name="Execute">
-        <command>logout.sh</command>
+        <command>openbox --reconfigure</command>
       </action>
     </keybind>
-    <keybind key="A-9">
+    <keybind key="A-S-q">
       <action name="Execute">
-        <command>st -e mutt</command>
-      </action>
-    </keybind>
-    <keybind key="A-0">
-      <action name="Execute">
-        <command>st -e cmus</command>
-      </action>
-    </keybind>
-    <keybind key="A-f">
-      <action name="Execute">
-        <command>st -e nnn -d</command>
+        <command>openbox --exit</command>
       </action>
     </keybind>
     <keybind key="A-w">
@@ -420,7 +448,7 @@ cases. -->
       <mousebind button="A-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
-      <mousebind button="A-S-Left" action="Drag">
+      <mousebind button="A-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
       <mousebind button="A-Right" action="Press">
@@ -751,8 +779,11 @@ cases. -->
 
     # end of the example
   -->
-    <application class="*">
-      <decor>no</decor>
+    <application type="normal">
+      <position>
+        <x>center</x>
+        <y>center</y>
+      </position>
     </application>
   </applications>
 </openbox_config>

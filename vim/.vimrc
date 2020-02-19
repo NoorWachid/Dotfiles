@@ -1,3 +1,9 @@
+call plug#begin('~/.vim/plugged')
+  Plug 'dracula/vim', {'as':'dracula'}
+  Plug 'msanders/snipmate.vim'
+	Plug 'chrisbra/Colorizer'
+call plug#end()
+
 syntax on
 filetype plugin indent on
 
@@ -14,10 +20,11 @@ set wildignore+=**/.git/**
 set wildignore+=**/node_modules/**
 
 " Indent
-set expandtab
-set smartindent
+set tabstop=2
 set shiftwidth=2
 set softtabstop=2 
+set noexpandtab
+set smartindent
 set smarttab
 set breakindent
 
@@ -83,4 +90,5 @@ let g:netrw_list_hide='\(^\|\s\s\)\zs\.\S\+'
 
 " Always put colorscheme  in the end
 " for better load time.
-colo gruvbox
+colo dracula
+hi Normal guibg=NONE ctermbg=NONE
